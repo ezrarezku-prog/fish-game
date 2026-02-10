@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 
 public class shark : MonoBehaviour
 {
-    [SerializeField] float turnSpeed = 1f;
-    [SerializeField] float moveSpeed = .005f;
+    [SerializeField] float turnSpeed = 150f;
+    [SerializeField] float moveSpeed = 5f;
     
     void Start()
     {
@@ -37,9 +37,11 @@ public class shark : MonoBehaviour
             turn = -1f;
         }
     
+        float moveAmount = move * moveSpeed * Time.deltaTime;
+        float turnAmount = turn * turnSpeed * Time.deltaTime;
 
-        transform.Rotate(0, 0, turn*turnSpeed);
-        transform.Translate(0, move*moveSpeed, 0);
+        transform.Rotate(0, 0, turnAmount);
+        transform.Translate(0, moveAmount, 0);
         
     }
 }

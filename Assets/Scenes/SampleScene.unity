@@ -559,8 +559,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec6e8976c317cb439f14dbdc78724da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::shark
-  turnSpeed: 1
-  moveSpeed: 0.005
+  turnSpeed: 150
+  moveSpeed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
