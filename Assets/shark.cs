@@ -15,28 +15,31 @@ public class shark : MonoBehaviour
     
     void Update()
     {
+        float move = 0f;
+        float turn = 0f;
+    
+
         if (Keyboard.current.wKey.isPressed)
         {
-            Debug.Log("Pushing forward");
+            move = 1f;
+        }
+        else if (Keyboard.current.sKey.isPressed)
+        {
+            move = -1f;
         }
 
         if (Keyboard.current.aKey.isPressed)
         {
-            Debug.Log("Turning left");
+            turn = 1f;
         }
-        if (Keyboard.current.dKey.isPressed)
+        else if (Keyboard.current.dKey.isPressed)
         {
-            Debug.Log("Turning right");
+            turn = -1f;
         }
-        if (Keyboard.current.sKey.isPressed)
-        {
-            Debug.Log("Pushing back");
-        }
+    
 
-
-
-        transform.Rotate(0, 0, turnSpeed);
-        transform.Translate(0, moveSpeed, 0);
+        transform.Rotate(0, 0, turn*turnSpeed);
+        transform.Translate(0, move*moveSpeed, 0);
         
     }
 }
