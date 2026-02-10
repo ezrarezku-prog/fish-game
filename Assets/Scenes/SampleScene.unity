@@ -351,7 +351,6 @@ GameObject:
   - component: {fileID: 635328516}
   - component: {fileID: 635328515}
   - component: {fileID: 635328514}
-  - component: {fileID: 635328517}
   - component: {fileID: 635328518}
   m_Layer: 0
   m_Name: SawShark_0
@@ -456,18 +455,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &635328517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635328513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec6e8976c317cb439f14dbdc78724da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
 --- !u!114 &635328518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec6e8976c317cb439f14dbdc78724da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::shark
+  moveSpeed: 0.05
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

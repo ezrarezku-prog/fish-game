@@ -1,9 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class shark : MonoBehaviour
 {
-    float turnSpeed = .1f;
-    float moveSpeed = .005f;
+    [SerializeField] float turnSpeed = 1f;
+    [SerializeField] float moveSpeed = .005f;
     
     void Start()
     {
