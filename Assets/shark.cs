@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class shark : MonoBehaviour
 {
-    float swimSpeed = .05f;
+    float turnSpeed = .1f;
+    float moveSpeed = .005f;
     
     void Start()
     {
@@ -12,8 +13,8 @@ public class shark : MonoBehaviour
     
     void Update()
     {
-        transform.Rotate(0, 0, swimSpeed);
-        transform.Translate(0, 0.05f, 0);
+        transform.Rotate(0, 0, turnSpeed);
+        transform.Translate(0, moveSpeed, 0);
         
     }
 }
