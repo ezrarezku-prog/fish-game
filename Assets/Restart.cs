@@ -4,9 +4,9 @@ using System.Collections;
 
 public class Restart : MonoBehaviour
 {
-    public void RestartGame()
+    public void LoadGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("finalScene");
     }
 
 
