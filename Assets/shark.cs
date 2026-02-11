@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using TMPro;
+using UnityEngine.UI;
 
 public class shark : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class shark : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI scoreText;
 
+    [SerializeField] TextMeshProUGUI winText;
+    [SerializeField] TextMeshProUGUI diedText;
+
      
      bool isAlive = true;
 
@@ -27,6 +31,8 @@ public class shark : MonoBehaviour
         currentSpeed = regularSpeed;
         healthText.text = health.ToString();
         scoreText.text = score.ToString();
+        winText.text = "";
+        diedText.text = "";
 
     }
 
@@ -44,11 +50,11 @@ public class shark : MonoBehaviour
             Destroy(collision.gameObject);
             score += 1;
             scoreText.text = score.ToString();
-            print(score);
+            
             if (score >= 5)
             {
-                // You can add code here to handle the win condition, such as displaying a victory message or transitioning to a new scene.
-                Debug.Log("You win!");
+                winText.text = "You Win!";
+                
             }
         }
 
@@ -57,11 +63,13 @@ public class shark : MonoBehaviour
             Destroy(collision.gameObject);
             health -= 10;
             healthText.text = health.ToString();
-            print(health);
+            
             if (health <= 0)
             {
+                diedText.text = "You Died!";
                 isAlive = false;
-                // Optionally, you can add code here to handle the shark's death, such as playing an animation or disabling the GameObject.
+                
+              // write died
             }
         }
     }
