@@ -52,6 +52,7 @@ public class shark : MonoBehaviour
 
         if (collision.CompareTag("reward"))
         {
+            audioManager.PlayYayFishSFX();
             Destroy(collision.gameObject);
             score += 1;
             scoreText.text = score.ToString();
@@ -59,7 +60,7 @@ public class shark : MonoBehaviour
             if (score >= 5)
             {
                 winText.text = "You Win!";
-                
+                audioManager.PlayWonSFX();
             }
         }
 
@@ -68,12 +69,13 @@ public class shark : MonoBehaviour
             Destroy(collision.gameObject);
             health -= 10;
             healthText.text = health.ToString();
+            audioManager.PlayTrashSFX();
             
             if (health <= 0)
             {
                 diedText.text = "You Died!";
                 isAlive = false;
-                
+                audioManager.PlayLoseSFX();
               // write died
             }
         }
