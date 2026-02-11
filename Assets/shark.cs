@@ -9,6 +9,8 @@ public class shark : MonoBehaviour
     [SerializeField] float currentSpeed = 5f;
     [SerializeField] float BoostSpeed = 10f;
     [SerializeField] float regularSpeed = 5f;
+
+    [SerializeField] int health = 50;
      
      bool isAlive = true;
 
@@ -29,6 +31,16 @@ public class shark : MonoBehaviour
 
            
         }
+        if (collision.CompareTag("trash"))
+        {
+            Destroy(collision.gameObject);
+            health -= 10;
+            if (health <= 0)
+            {
+                isAlive = false;
+                // Optionally, you can add code here to handle the shark's death, such as playing an animation or disabling the GameObject.
+            }
+        }
     }
     IEnumerator BoostSpeedCoroutine()
 {
@@ -38,6 +50,9 @@ public class shark : MonoBehaviour
 }
     void Update()
     {
+        if (!isAlive) { return;}
+        
+
         float move = 0f;
         float turn = 0f;
 
@@ -70,5 +85,7 @@ public class shark : MonoBehaviour
 
 
     }
+    
+
 }
 
