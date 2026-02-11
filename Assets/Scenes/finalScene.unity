@@ -1960,9 +1960,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091330145}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2475, y: 1.2475, z: 1.2475}
+  m_LocalScale: {x: 1.2474998, y: 1.2474998, z: 1.2474998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1552667707}
@@ -1970,7 +1970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -130.3}
+  m_AnchoredPosition: {x: 11, y: -127}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091330147
@@ -2079,6 +2079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d5b9df3e787ef459e27a2a28d47948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Restart
+  restartButton: {fileID: 0}
 --- !u!1 &1140852735
 GameObject:
   m_ObjectHideFlags: 0
@@ -23117,6 +23118,7 @@ MonoBehaviour:
   scoreText: {fileID: 360484627}
   winText: {fileID: 779924434}
   diedText: {fileID: 38322493}
+  restartButtton: {fileID: 1091330145}
 --- !u!212 &1242924638
 SpriteRenderer:
   serializedVersion: 2
@@ -23534,6 +23536,7 @@ MonoBehaviour:
   scoreText: {fileID: 360484627}
   winText: {fileID: 779924434}
   diedText: {fileID: 38322493}
+  restartButtton: {fileID: 0}
 --- !u!1 &1621571018
 GameObject:
   m_ObjectHideFlags: 0

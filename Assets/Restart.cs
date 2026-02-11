@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Restart : MonoBehaviour
+
 {
+
+    public GameObject restartButton;
     public void LoadGame()
+
     {
         SceneManager.LoadScene("finalScene");
     }

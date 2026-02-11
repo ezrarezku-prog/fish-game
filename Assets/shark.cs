@@ -21,7 +21,7 @@ public class shark : MonoBehaviour
     [SerializeField] TextMeshProUGUI winText;
     [SerializeField] TextMeshProUGUI diedText;
 
-
+    public GameObject restartButtton;
     audiomanager audioManager;
 
      
@@ -38,6 +38,9 @@ public class shark : MonoBehaviour
         scoreText.text = score.ToString();
         winText.text = "";
         diedText.text = "";
+        restartButtton.SetActive(false);
+        
+        
 
     }
 
@@ -76,6 +79,8 @@ public class shark : MonoBehaviour
                 diedText.text = "You Died!";
                 isAlive = false;
                 audioManager.PlayLoseSFX();
+                restartButtton.SetActive(true);
+                
               // write died
             }
         }
