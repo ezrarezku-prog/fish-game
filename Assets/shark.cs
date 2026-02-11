@@ -5,13 +5,17 @@ using UnityEngine.InputSystem;
 public class shark : MonoBehaviour
 {
     [SerializeField] float turnSpeed = 150f;
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float currentSpeed = 5f;
+    [SerializeField] float boostSpeed = 10f;
+    [SerializeField] float regularSpeed = 5f;
 
-    void Start()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.CompareTag("shrimpBoost"))
+        {
+            currentSpeed = boostSpeed;
+        }
     }
-
 
     void Update()
     {
@@ -37,11 +41,13 @@ public class shark : MonoBehaviour
             turn = -1f;
         }
 
-        float moveAmount = move * moveSpeed * Time.deltaTime;
+        float moveAmount = move * currentSpeed * Time.deltaTime;
         float turnAmount = turn * turnSpeed * Time.deltaTime;
 
         transform.Rotate(0, 0, turnAmount);
         transform.Translate(0, moveAmount, 0);
+
+
 
     }
 }
