@@ -21,6 +21,9 @@ public class shark : MonoBehaviour
     [SerializeField] TextMeshProUGUI winText;
     [SerializeField] TextMeshProUGUI diedText;
 
+
+    audiomanager audioManager;
+
      
      bool isAlive = true;
 
@@ -28,6 +31,8 @@ public class shark : MonoBehaviour
 
     void Start()
     {
+        audioManager = FindFirstObjectByType<audiomanager>();
+
         currentSpeed = regularSpeed;
         healthText.text = health.ToString();
         scoreText.text = score.ToString();
@@ -39,8 +44,8 @@ public class shark : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("shrimpBoost"))
-        {
-            
+        {   
+            audioManager.PlayPickShrimpSFX();
             Destroy(collision.gameObject);
            StartCoroutine(BoostSpeedCoroutine());
         }
