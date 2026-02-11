@@ -11,6 +11,7 @@ public class shark : MonoBehaviour
     [SerializeField] float regularSpeed = 5f;
 
     [SerializeField] int health = 50;
+    [SerializeField] int score = 0;
      
      bool isAlive = true;
 
@@ -28,9 +29,19 @@ public class shark : MonoBehaviour
             
             Destroy(collision.gameObject);
            StartCoroutine(BoostSpeedCoroutine());
-
-           
         }
+
+        if (collision.CompareTag("reward"))
+        {
+            Destroy(collision.gameObject);
+            score += 1;
+            if (score >= 5)
+            {
+                // You can add code here to handle the win condition, such as displaying a victory message or transitioning to a new scene.
+                Debug.Log("You win!");
+            }
+        }
+
         if (collision.CompareTag("trash"))
         {
             Destroy(collision.gameObject);
