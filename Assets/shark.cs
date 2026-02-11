@@ -10,6 +10,7 @@ public class shark : MonoBehaviour
     [SerializeField] float BoostSpeed = 10f;
     [SerializeField] float regularSpeed = 5f;
      
+     bool isAlive = true;
 
     //float timeLeft= 2f;
 

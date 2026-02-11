@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - shrimpBoost
+  - trash
   layers:
   - Default
   - TransparentFX
